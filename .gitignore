@@ -133,3 +133,9 @@ dmypy.json
 
 # vscode
 /.vscode/
+
+# model test
+/modelTest
+
+# model test
+/logs/
