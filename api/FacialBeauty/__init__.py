@@ -4,6 +4,9 @@ import azure.functions as func
 
 import os
 
+import tensorflow as tf
+import numpy as np
+
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
