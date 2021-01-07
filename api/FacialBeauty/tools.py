@@ -27,9 +27,9 @@ LEFT_MOUTH_FKP      = 49
 RIGHT_MOUTH_FKP     = 55
 
 # NOSE FKP
-PEEK_NOSE_FKP      = 28
-LEFTBASE_NOSE_FKP  = 32
-RIGHTBASE_NOSE_FKP = 36
+PEEK_NOSE_FKP       = 28
+LEFTBASE_NOSE_FKP   = 32
+RIGHTBASE_NOSE_FKP  = 36
 
 # EDGES FKP
 LEFT_EDGE_FKP       = 4
@@ -164,6 +164,7 @@ def preprocessImage(image:np.array)->np.array:
 
     return imageClone
 
+
 def computeDistance(point1:np.array, point2:np.array)->np.float:
     """Compute distance between two points
 
@@ -196,6 +197,8 @@ def FacialBeautyClassifier(fkpMap:dict)->dict:
     Returns:
         dict: facial beauty infos
         {
+            # timestamp 
+            "timestamp"             : float
             # MOUTH FKP
             "leftMouthFKP"          : FKP49
             "rightMouthFKP"         : FKP55
@@ -233,14 +236,11 @@ def FacialBeautyClassifier(fkpMap:dict)->dict:
             "peekRightNoseAccuracy" : peekRightNose / (noseWidth * 1.618)
 
             "noseAccuracy"     : float
-
-
-
-
         }
     """
 
     pass
+
 
 def makeInference(image:np.array)->dict:
     """Make prediction
@@ -277,22 +277,6 @@ def makeInference(image:np.array)->dict:
             pass
     
     return fkpMaps
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # function
