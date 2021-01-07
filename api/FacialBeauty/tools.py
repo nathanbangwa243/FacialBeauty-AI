@@ -13,6 +13,8 @@ import numpy as np
 import tensorflow as tf
 
 import cv2
+import io
+from PIL import Image
 
 
 # CONFIG
@@ -107,6 +109,25 @@ class AddBatchChannel(object):
         # image = image.transpose((2, 0, 1))
         
         return image
+
+
+def imageStreamToArray(imageStream)->np.array:
+    """Convert image stream to numpy array
+
+    Args:
+        imageStream (Bytes): image stream
+
+    Returns:
+        np.array: image matrix
+    """
+
+    # decoded = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), -1)
+
+    # (H, W, C)
+    image = np.array(Image.open(io.BytesIO(imageStream)))
+
+    return image
+
 
 # model loader
 def loadFKPModel(fkp:int) -> tf.keras.models.Sequential:

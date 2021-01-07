@@ -48,10 +48,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     if condition:
 
         response = dict()
-        
+
         try:
             # image stream to numpy array
-            image = np.array()
+            image = tools.imageStreamToArray(imageData)
 
             # preprocess
             image = tools.preprocessImage(image)
@@ -61,7 +61,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
             # classify
             response = tools.FacialBeautyClassifier(fkpMap)
-        
+
         except Exception as error:
             response = {
                 "message": f"{error}"
@@ -73,7 +73,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                 response,
                 status_code=CODE400
             )
-        
+
         else:
             response = json.dumps(response)
 
@@ -81,7 +81,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                 response,
                 status_code=CODE200
             )
-
 
     else:
         response = {
