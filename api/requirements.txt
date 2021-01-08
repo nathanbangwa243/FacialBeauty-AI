@@ -1,5 +1,76 @@
-# DO NOT include azure-functions-worker in this file
-# The Python Worker is managed by Azure Functions platform
-# Manually managing azure-functions-worker may cause unexpected issues
-
-azure-functions
+absl-py @ file:///D:/bld/absl-py_1598382479526/work
+astor @ file:///home/conda/feedstock_root/build_artifacts/astor_1593610464257/work
+autopep8 @ file:///tmp/build/80754af9/autopep8_1596578164842/work
+azure-functions==1.5.0
+backcall==0.2.0
+certifi==2020.12.5
+chardet==4.0.0
+click==7.1.2
+colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
+cycler==0.10.0
+decorator==4.4.2
+gast @ file:///home/conda/feedstock_root/build_artifacts/gast_1596839682936/work
+google-pasta==0.2.0
+grpcio @ file:///D:/bld/grpcio_1596715850903/work
+h5py @ file:///D:/bld/h5py_1595110299148/work
+idna==2.10
+importlib-metadata @ file:///D:/bld/importlib-metadata_1593211612489/work
+ipykernel @ file:///C:/ci/ipykernel_1596208728219/work/dist/ipykernel-5.3.4-py3-none-any.whl
+ipython @ file:///C:/ci/ipython_1604101327119/work
+ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
+jedi==0.17.0
+joblib @ file:///tmp/build/80754af9/joblib_1594236160679/work
+jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
+jupyter-core @ file:///C:/ci/jupyter_core_1606130908768/work
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.0
+kivy-deps.glew==0.1.12
+kivy-deps.gstreamer==0.1.17
+kivy-deps.sdl2==0.1.22
+Kivy-Garden==0.1.4
+kiwisolver==1.2.0
+Markdown @ file:///home/conda/feedstock_root/build_artifacts/markdown_1589366472132/work
+matplotlib @ file:///C:/ci/matplotlib-base_1597858387645/work
+mkl-service==2.3.0
+nltk @ file:///tmp/build/80754af9/nltk_1592496090529/work
+numpy @ file:///D:/bld/numpy_1597938567428/work
+olefile==0.46
+pandas @ file:///C:/ci/pandas_1598371525254/work
+parso @ file:///tmp/build/80754af9/parso_1607623074025/work
+pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
+Pillow @ file:///C:/ci/pillow_1594298234712/work
+prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1602688806899/work
+protobuf==3.13.0
+pycodestyle==2.6.0
+Pygments @ file:///tmp/build/80754af9/pygments_1607368905949/work
+pyparsing==2.4.7
+pypiwin32==223
+PyQt5==5.12.3
+PyQt5-sip==4.19.18
+PyQtWebEngine==5.12.1
+pyreadline==2.1
+python-dateutil==2.8.1
+pytz==2020.1
+pywin32==227
+pyzmq==20.0.0
+regex @ file:///C:/ci/regex_1596827857056/work
+requests==2.25.1
+scikit-learn @ file:///C:/ci/scikit-learn_1598376983131/work
+scipy @ file:///C:/ci/scipy_1597686737426/work
+seaborn==0.10.1
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
+tensorboard==1.14.0
+tensorflow @ file:///D:/bld/tensorflow_1594833538462/work/tensorflow-1.14.0-cp37-cp37m-win_amd64.whl
+tensorflow-estimator==1.14.0
+termcolor==1.1.0
+threadpoolctl @ file:///tmp/tmp9twdgx9k/threadpoolctl-2.1.0-py3-none-any.whl
+toml @ file:///tmp/build/80754af9/toml_1592853716807/work
+tornado==6.0.4
+tqdm @ file:///tmp/build/80754af9/tqdm_1596810128862/work
+traitlets @ file:///tmp/build/80754af9/traitlets_1602787416690/work
+urllib3==1.26.2
+wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+Werkzeug==1.0.1
+wincertstore==0.2
+wrapt==1.12.1
+zipp==3.1.0

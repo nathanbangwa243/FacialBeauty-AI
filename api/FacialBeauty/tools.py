@@ -1,5 +1,4 @@
 
-from api.FacialBeauty import IMAGE_TYPE
 import logging
 
 import json
@@ -95,20 +94,29 @@ class AddBatchChannel(object):
     """Convert ndarrays in sample to Tensors."""
 
     def __call__(self, image):
+        logging.info(f"[AddBatchChannel] Start")
         # make a copy
         imageCopy = np.copy(image)
+
+        logging.info(f"[AddBatchChannel] imageCopy Shape : {imageCopy.shape}")
+
+        
+
 
         # if image has no grayscale color channel, add one
         if(len(imageCopy.shape) == 2):
             # add that third color dim
-            imageCopy = imageCopy.reshape(imageCopy.shape[0], imageCopy.shape[1], 1)
+            imageCopy = imageCopy.reshape(1, imageCopy.shape[0], imageCopy.shape[1], 1)
+            logging.info(f"[AddBatchChannel into if state] imageCopy Shape : {imageCopy.shape}")
+
+
             
         # swap color axis because
         # numpy image: H x W x C
         # batch image: C X H X W
         # image = image.transpose((2, 0, 1))
         
-        return image
+        return imageCopy
 
 
 def imageStreamToArray(imageStream)->np.array:
@@ -140,6 +148,9 @@ def loadFKPModel(fkp:int) -> tf.keras.models.Sequential:
         tf.keras.models.Sequential: Keras model
     """
 
+    logging.info(f"[loadFKPModel] Start")
+
+
     # Function project path
     cwd = os.getcwd()
 
@@ -157,6 +168,9 @@ def loadFKPModel(fkp:int) -> tf.keras.models.Sequential:
         logging.info(f"[loadFKPModel Error] {error}")
 
         loadedModel = None
+    
+
+    loadFKPModel
     
     return loadedModel
 
@@ -260,7 +274,7 @@ def FacialBeautyClassifier(fkpMap:dict)->dict:
         }
     """
 
-    pass
+    return fkpMap
 
 
 def makeInference(image:np.array)->dict:
@@ -275,6 +289,9 @@ def makeInference(image:np.array)->dict:
             # fkp : [x,y]
         }
     """
+    logging.info(f"[makeInference] Start")
+    logging.info(f"[makeInference] Image shape : {image.shape}")
+
 
     # FKP prediction map
     fkpMaps = {
@@ -287,15 +304,24 @@ def makeInference(image:np.array)->dict:
         # load model
         model = loadFKPModel(fkp)
 
-        if not isinstance(model, None):
+        if model != None:
             # make prediction
             prediction = model.predict(image)
+            prediction = [float(n) for n in prediction[0]]
 
             # add fkp to fkpMaps
-            fkpMaps[fkp] = prediction
+            fkp             = int(fkp)
+            fkpMaps[fkp]    = list(prediction)
+
         
         else:
             pass
+
+    
+    
+    logging.info(f"[makeInference] fkpMaps : {fkpMaps}")
+    logging.info(f"[makeInference] End")
+
     
     return fkpMaps
 

@@ -32,15 +32,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     # image data : image data stream
     imageData = req.get_body()  # tools.checkParameter(req=req, name='imageData')
 
-    # file type
-    # imageType = tools.checkParameter(req=req, name='imageType')
-
-    logging.info(f"req.param: {req.params}")
-    logging.info(f"req.files: {req.files}")
-    logging.info(f"type req.get_body: {type(req.get_body())}")
-    logging.info(f"req.get_body: {req.get_body()}")
-    # logging.info(f"httpAction: {httpAction}")
-    # logging.info(f"imageData: {imageData}")
+    logging.info(f"[imageData Type]: {type(imageData)}")
 
     # check required elements
     condition = bool(imageData)
