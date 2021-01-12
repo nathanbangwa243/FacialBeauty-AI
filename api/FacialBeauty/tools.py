@@ -17,8 +17,6 @@ from PIL import Image
 
 
 # CONFIG
-OPENCV_FKP_MODEL = ""
-
 
 # Target FKP Model
 FKP_MODELS = np.array([49, 55, 28, 32, 36, 4, 14])
