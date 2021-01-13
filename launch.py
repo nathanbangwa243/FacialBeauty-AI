@@ -65,12 +65,14 @@ def main():
     
     # launch
     for thread in threads:
-        print(f"Startin of training {thread.name}")
+        print(f"Starting of training {thread.name}")
         thread.start()
     
     # join
     for thread in threads:
         thread.join()
+        print(f"End of training {thread.name}")
+
     
     # push to github
     pushToGithub()
