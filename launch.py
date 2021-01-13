@@ -75,7 +75,12 @@ def main():
 
     
     # push to github
+    print(f"Starting Push Process")
+
     pushToGithub()
+
+    print(f"End of Push Process")
+
 
 
 if __name__ == "__main__":
