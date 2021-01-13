@@ -1,4 +1,4 @@
-import trainingFB
+# import trainingFB
 import sys
 
 
@@ -8,8 +8,6 @@ def main():
 
     # target fkp
     targetFKP = int(sys.argv[1])
-
-    assert isinstance(targetFKP, int)
 
     assert targetFKP in trainingFB.config.TARGET_FKPS
 
