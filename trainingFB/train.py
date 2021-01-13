@@ -14,14 +14,14 @@ from . import loadData
 
 class CustomCallback(tf.keras.callbacks.Callback):
 
-    def __init__(self, cwd, targetFolder, modelRef):
+    def __init__(self, cwd, targetFolder):
 
         assert os.path.exists(cwd)
         assert isinstance(targetFolder, str)
         assert os.path.exists(targetFolder)
 
         self.targetFolder = targetFolder
-        self.modelRef = modelRef
+        # self.modelRef = modelRef
         self.cwd = cwd
 
     def on_epoch_end(self, epoch, logs=None):
@@ -195,7 +195,7 @@ def trainModel(fkp):
         tf.keras.callbacks.EarlyStopping(patience=PATIENCE),
         # tf.keras.callbacks.ModelCheckpoint(filepath=modelFile),
         tf.keras.callbacks.TensorBoard(log_dir=logDir),
-        CustomCallback(cwd=cwd, targetFolder=fkpFolder, modelRef=modelClone)
+        CustomCallback(cwd=cwd, targetFolder=fkpFolder)
 
     ]
 
