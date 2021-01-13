@@ -65,6 +65,7 @@ def main():
     
     # launch
     for thread in threads:
+        print(f"Startin of training {thread.name}")
         thread.start()
     
     # join
