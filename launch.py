@@ -2,7 +2,7 @@ import os
 
 from threading import Thread
 
-# from trainingFB import config
+from trainingFB import config
 
 import sys
 
@@ -14,6 +14,10 @@ AZURE_PYTHON_ENV = ""
 # branch
 TARGET_BRANCH = "training"
 
+
+def shutdown():
+    cmd = f"shutdown -s -t 0"
+    os.system(cmd)
 
 def pushToGithub():
     # ADD
@@ -54,7 +58,7 @@ def main():
 
     
 
-    for fkp in [1, 2, 3]:#config.TARGET_FKPS:
+    for fkp in config.TARGET_FKPS:
         threads.append(
             Thread(
                 target=startTraining,
