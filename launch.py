@@ -9,7 +9,7 @@ import sys
 
 # pythonEnv env
 LOCAL_PYTHON_ENV = "C:\\ProgramData\\Anaconda3\\envs\\tensorflow\\python.exe"
-AZURE_PYTHON_ENV = ""
+AZURE_PYTHON_ENV = "C:\\Miniconda\\envs\\master\\python.exe"
 
 # branch
 TARGET_BRANCH = "training"
