@@ -159,7 +159,7 @@ def buildNaimishModel():
 
 def trainModel(fkp):
     # load dataset
-    trainingDataset, _ = loadData.loadData()
+    trainingDataset, _ = loadData.loadDataset()
 
     # Train and test data
     trainDatas, validationDatas, trainLabels, validationLabels = loadData.splitTrainDataset(trainingDataset)
